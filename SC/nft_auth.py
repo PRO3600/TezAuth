@@ -76,13 +76,13 @@ def test():
     consumer = FA2.View_consumer(auth_nft)
     scenario += consumer
 
-    def arguments_for_balance_of(receiver, reqs):
+    def arguments_for_balance_of(receiver, req):
         return (sp.record(
                         callback = sp.contract(
                             FA2.Balance_of.response_type(),
                             sp.contract_address(receiver),
                             entry_point = "receive_balances").open_some(),
-                        requests = reqs
+                        requests = req
                         )
                 )
 
