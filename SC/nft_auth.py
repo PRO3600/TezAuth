@@ -72,17 +72,17 @@ def test():
         ]).run(sender = CFGZ1)
 
 
-"""
+""""
     consumer = FA2.View_consumer(auth_nft)
     scenario += consumer
 
-    def arguments_for_balance_of(receiver, req):
+    def arguments_for_balance_of(receiver, reqs):
         return (sp.record(
                         callback = sp.contract(
                             FA2.Balance_of.response_type(),
                             sp.contract_address(receiver),
                             entry_point = "receive_balances").open_some(),
-                        requests = req
+                        requests = reqs
                         )
                 )
 
@@ -92,4 +92,4 @@ def test():
         [sp.record(owner = CFGZ1.address, token_id = 1)]
         )
     )
-"""
+""""
