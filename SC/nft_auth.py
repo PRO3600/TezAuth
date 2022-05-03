@@ -5,9 +5,10 @@ FA2 = sp.io.import_script_from_url("https://smartpy.io/templates/FA2.py")
 #FA2 = sp.io.import_template("FA2.py")
 
 class Auth_Token(FA2.FA2):
+    def _init_(self, non_fungible = True, assume_consecutive_token_ids = True):
+        pass
+    
     pass
-
-
 
 
 
