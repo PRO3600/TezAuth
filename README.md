@@ -24,6 +24,6 @@ Génération NFT:
 
 Recherche NFT:
 
-- Dans un FA2, le tokenid n'apparaît en valeur d'aucune map => impossible sachant une addresse de dire les tokenid qu'elle a dans le FA2 ?
+- Dans un FA2, le tokenid n'apparaît en valeur d'aucune map du storage => impossible sachant une addresse de dire les tokenid qu'elle a dans le FA2 ? Faut-il rajouter manuellement une map dans le FA2 ?
 
 
