@@ -22,3 +22,8 @@ Génération NFT:
 - Les difficultés soulevées par l'ajout du mail de façon correct dans le NFT nous ammène à éditer un NFT par service provider et à gérer une authentification spécifique auprès du service provider.
 
 
+Recherche NFT:
+
+- Dans un FA2, le tokenid n'apparaît en valeur d'aucune map => impossible sachant une addresse de dire les tokenid qu'elle a dans le FA2 ?
+
+
