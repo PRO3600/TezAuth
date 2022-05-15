@@ -77,6 +77,7 @@ const signMessage = async () => {
   
   // The signature
   const { signature } = signedPayload;
+  
   }
 
 
@@ -84,8 +85,6 @@ const signMessage = async () => {
 
 // connect the wallet (requesting the user permission) and disconnect the wallet
 const connectWallet = async () => {
-
-    await signMessage();
 
     console.log('CONNECTING TO BEACON');
   
@@ -99,7 +98,9 @@ const connectWallet = async () => {
       },
     });
     return wallet;
+
 };
+
 
 const disconnectWallet = async () => {
 
@@ -122,8 +123,9 @@ const getTokenid = async () => {
 
 
 const metadata = MichelsonMap.fromLiteral({symbol: char2Bytes('SP_TezAuth_nft')});
+
 const mint = async () => {
-    Tezos.contract.at("<CONTRACT_ADDRESS>") // A compléter
+    Tezos.contract.at(config.CONTRACT_ADDRESS)
     .then(c => {
     const token_id = getTokenid();
     const pkh = getPKH();
@@ -138,12 +140,6 @@ const mint = async () => {
 .then(hash => console.log(`Operation injected: https://tzkt.io/${hash}`))
 .catch(error => console.log(error));
 }
-
-
-
-
-
-
 
 
 
