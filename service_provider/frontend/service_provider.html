@@ -1,21 +1,27 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
+
 <html>
 	<head>
 	<meta charset="utf-8" />
         <link rel="stylesheet" href="cssprov.css" />
-	<title>Fake service provider </title>
+	<title>Service Provider </title>
 	</head>
 
 <body>
+    <script>function PopupCentrer(page, largeur, hauteur, options) {
+        var top=(screen.height-hauteur)/2;
+        var left=(screen.width-largeur)/2;
+        window.open(page,"","top="+top+",left="+left+",width="+largeur+",height="+hauteur+","+options);
+      };</script>
 <div class="centre">
-<button class="without"
-        type="button">
-    Create account / Sign in
-</button>
-  <button class="with"
-        type="button">
-    Create account / Sign in with Tezauth
-</button>
+    <a href="javascript:PopupCentrer('service_provider_url',500,600,'menubar=no,status=no')"><button class="without"
+            type="button">
+            Create account / Sign in
+    </button></a>
+    <a href="javascript:PopupCentrer('service_provider_url',500,600,'menubar=no,status=no')"><button class="with"
+            type="button">
+        Create account / Sign in with Tezauth
+    </button></a>
 </div>
 </body>
 </html>
