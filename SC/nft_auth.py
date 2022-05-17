@@ -1,14 +1,33 @@
-
 import smartpy as sp
 
-FA2 = sp.io.import_script_from_url("https://smartpy.io/templates/FA2.py")
-#FA2 = sp.io.import_template("FA2.py")
+#FA2 = sp.io.import_script_from_url("https://smartpy.io/templates/FA2.py")
+FA2 = sp.io.import_template("FA2.py")
 
 class Auth_Token(FA2.FA2):
     def _init_(self, non_fungible = True, assume_consecutive_token_ids = True):
         pass
     
-    pass
+    
+    @sp.entry_point
+    def mint(self, params):
+        sp.verify(sp.sender == params.address, 'you cannot mint for another address')
+        sp.verify(params.amount == 1, 'NFT-asset: amount <> 1')
+        sp.verify(~ (self.data.all_tokens.contains(params.token_id)), 'NFT-asset: cannot mint twice same token')
+        sp.if self.data.ledger.contains((sp.set_type_expr(params.address, sp.TAddress), sp.set_type_expr(params.token_id, sp.TNat))):
+            self.data.ledger[(sp.set_type_expr(params.address, sp.TAddress), sp.set_type_expr(params.token_id, sp.TNat))].balance += params.amount
+        sp.else:
+            self.data.ledger[(sp.set_type_expr(params.address, sp.TAddress), sp.set_type_expr(params.token_id, sp.TNat))] = sp.record(balance = params.amount)
+        sp.if ~ (self.data.all_tokens.contains(params.token_id)):
+            self.data.all_tokens.add(params.token_id)
+            self.data.token_metadata[params.token_id] = sp.record(token_id = params.token_id, token_info = params.metadata)
+            self.data.total_supply[params.token_id] = params.amount + self.data.total_supply.get(params.token_id, default_value = 0)
+    
+
+
+
+        
+    
+
 
 
 
@@ -33,7 +52,7 @@ def test():
                                     name = "NFT ServiceProvider",
                                     symbol = "CFGZ1"
                                 ),
-                                token_id = 1 ).run(sender = admin)
+                                token_id = 1 ).run(sender = CFGZ1.address)
 
 
 
