@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+import Mint from './components/mint/Mint.jsx';
+import Home from './components/home/Home.jsx';
+import Navbar from './components/navbar/Navbar.jsx';
+import Wallet from './components/wallet/Wallet.jsx'
+
+const App = () => {
+    return (
+        <div>
+            <Router>
+                <Navbar />
+                <Switch>
+                    <Route exact component={Mint} path="/mint" />
+                    <Route exact component={Home} path="/" />
+                    <Route exact component={Wallet} path ="/wallet" />
+                </Switch>
+            </Router>
+        </div>
+    );
+};
 
 export default App;
