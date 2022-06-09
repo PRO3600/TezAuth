@@ -36,7 +36,7 @@ const Navbar = () => {
                     </NavLink>
 
                     <NavLink 
-                    to="" 
+                    to="/" 
                     activestyle={{ color: 'black' }}
                     >
                         Sign to connect on SP
