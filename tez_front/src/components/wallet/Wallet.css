@@ -1,0 +1,26 @@
+.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 150px;
+}
+.large {
+  height: 150px;
+  width: 300px;
+  background-color: #F2C36E;
+  color: #3571E5;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 10px #BE9955;
+  font-size: x-large;
+  font-weight: 800
+}
+.large:active {
+    box-shadow: 0 5px #7A6237;
+    transform: translateY(4px);
+}

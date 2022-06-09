@@ -1,0 +1,16 @@
+.grille{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2em;
+    margin: 2em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.Card {
+    width: 150px;
+
+}

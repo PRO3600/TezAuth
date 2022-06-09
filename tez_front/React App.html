@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+</style><style type="text/css">.center-div
+{
+  display: flex;
+  justify-content: Center;
+  align-items: Center;
+  height: 100%;
+}
+.large {
+  height: 150px;
+  width: 300px;
+  background-color: #F2C36E;
+  color: #3571E5;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 10px #BE9955;
+  font-size: xx-large;
+  font-weight: 800
+}
+.large:active {
+    box-shadow: 0 5px #7A6237;
+    transform: translateY(4px);
+}</style><style type="text/css">.grille{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 2em;
+    gap: 2em;
+    margin: 2em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.Card {
+    width: 150px;
+
+}</style><style type="text/css">.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 150px;
+}
+.large {
+  height: 150px;
+  width: 300px;
+  background-color: #F2C36E;
+  color: #3571E5;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 10px #BE9955;
+  font-size: x-large;
+  font-weight: 800
+}
+.large:active {
+    box-shadow: 0 5px #7A6237;
+    transform: translateY(4px);
+}</style><style data-styled="active" data-styled-version="5.3.5">.gdTkzQ{background:#F2C36E;height:60px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:0.2rem calc((100vw - 1000px) / 2);z-index:12;}.boUbIu{color:#3571E5;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-text-decoration:none;text-decoration:none;padding:0 1rem;height:100%;cursor:pointer;}.boUbIu:hover{color:black;}.gbHvFa{display:none;color:#fff;}@media screen and (max-width:768px){.gbHvFa{display:block;position:absolute;top:0;right:0;-webkit-transform:translate(-100%,75%);-ms-transform:translate(-100%,75%);transform:translate(-100%,75%);font-size:1.8rem;cursor:pointer;}}.cHMzaC{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-right:-24px;}@media screen and (max-width:768px){.cHMzaC{display:none;}}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><nav class="sc-bczRLJ gdTkzQ"><a aria-current="page" class="sc-gsnTZi boUbIu active" href="http://localhost:3000/"><a href="http://localhost:3000/"><img src="./React App_files/tzauth.28358ec5.png" alt="" width="90"></a></a><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" class="sc-dkzDqf gbHvFa" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg><div class="sc-hKMtZM cHMzaC"><a activestyle="[object Object]" aria-current="page" class="sc-gsnTZi boUbIu active" href="http://localhost:3000/">Home</a><a activestyle="[object Object]" class="sc-gsnTZi boUbIu" href="http://localhost:3000/mint">Mint</a><a activestyle="[object Object]" class="sc-gsnTZi boUbIu" href="http://localhost:3000/wallet">Wallet</a></div></nav><div class="container"><div class="grille"><div class="Card"><img src="./React App_files/tzauth.28358ec5.png" alt="" width="150"><div class="p-4"><p class="text-2xl font-semibold" style="height: 64px;">TezAUTH</p><div style="height: 70px; overflow: hidden;"><p class="text-gray-400">Infos</p></div></div><div class="p-4 bg-black"><p class="text-2xl mb-4 font-bold text-white"></p><button class="w-full bg-blue-500 text-white font-bold py-2 px-12 rounded">USE</button></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/0.chunk.js"></script><script src="./React App_files/main.chunk.js"></script>
+
+<iframe id="wanteeedPanel" data-version="1.21.1" allowtransparency="true" style="
+      width: 335px !important;
+      height: 280px !important;
+      min-width: 0;
+      min-height: 0;
+      display: none;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      left: auto;
+      border: none;
+      background-color: #ffffff;
+      overflow: hidden;
+      z-index: 9145739864;
+      clip: auto;
+      border-radius: 3px;
+      box-shadow: rgb(181, 181, 181) 1px 1px 3px 2px;
+    " src="./React App_files/saved_resource.html"></iframe><iframe id="wanteeedTestMaker" data-version="1.21.1" allowtransparency="true" style="
+      width: 350px;
+      height: 0;
+      transition: .2s ease-out;
+      position: fixed;
+      top: 10px;
+      left: 0;
+      overflow: hidden;
+      z-index: 45739864;
+      clip: auto;
+      border: none;
+    " src="./React App_files/saved_resource(1).html"></iframe></body></html>

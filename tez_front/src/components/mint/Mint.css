@@ -1,0 +1,22 @@
+.center-div
+{
+  display: flex;
+  justify-content: Center;
+  align-items: Center;
+  height: 100%;
+}
+.large {
+  height: 150px;
+  width: 300px;
+  background-color: #F2C36E;
+  color: #3571E5;
+  border: none;
+  border-radius: 100px;
+  box-shadow: 0 10px #BE9955;
+  font-size: xx-large;
+  font-weight: 800
+}
+.large:active {
+    box-shadow: 0 5px #7A6237;
+    transform: translateY(4px);
+}
