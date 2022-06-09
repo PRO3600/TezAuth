@@ -34,6 +34,14 @@ const Navbar = () => {
                     >
                         Wallet
                     </NavLink>
+
+                    <NavLink 
+                    to="" 
+                    activestyle={{ color: 'black' }}
+                    >
+                        Sign to connect on SP
+                    </NavLink>
+
                 </NavMenu> 
             </Nav> 
         </>
