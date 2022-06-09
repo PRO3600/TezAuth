@@ -1,26 +1,44 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {
+    Nav,
+    NavLink,
+    Bars,
+    NavMenu,
+} from "./NavbarElements";
+import logo from '../../tzauth.png';
 
 const Navbar = () => {
     return (
-        <ul className="nav">
-            <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/">
-                    Home
+        <>
+           <Nav>
+                <NavLink to="/">
+                <a href="/"><img src={logo} alt="" width="90"/></a>
                 </NavLink>
-            </li>
-            <li className="nav-item">
-                <NavLink className="nav-link" to="/mint">
-                    Mint NFTs
-                </NavLink>
-            </li>
-            <li className="nav-item">
-                <NavLink className="nav-link" to="/wallet">
-                    Wallet
-                </NavLink>
-            </li>
-        </ul>
+                <Bars />
+                <NavMenu>
+                    <NavLink 
+                    to="/"
+                    activestyle={{ color:'black' }}
+                    >
+                        Home
+                    </NavLink>
+                    <NavLink 
+                    to="/mint" 
+                    activestyle={{ color: 'black' }}
+                    >
+                        Mint
+                    </NavLink>
+                    <NavLink 
+                    to="/wallet" 
+                    activestyle={{ color: 'black' }}
+                    >
+                        Wallet
+                    </NavLink>
+                </NavMenu> 
+            </Nav> 
+        </>
     );
 };
+
 
 export default Navbar;

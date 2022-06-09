@@ -17,7 +17,7 @@ const Tezos = new TezosToolkit(config.RPC_URL);
 
 const getBeaconInstance = async () => {
 
-    const options = {
+    const options:any = {
         name: config.NAME,
         iconUrl: 'https://tezostaquito.io/img/favicon.svg', // mettre notre logo
         preferredNetwork: config.NETWORK,
@@ -32,17 +32,17 @@ const getBeaconInstance = async () => {
 
 }
 
-const wallet = await getBeaconInstance();
+const wallet = getBeaconInstance();
 
 
 
 // get the Public Key Hash (pkh) (=useraddress on tezos) of the user
 const getPKH = async () => {
-  const pkh = await wallet.getPKH();
+  const pkh = await (await wallet).getPKH();
   return pkh;
 };
 
-const pkh = await getPKH();
+const pkh = getPKH();
 
 
 
@@ -69,11 +69,11 @@ const signMessage = async () => {
   const payload: RequestSignPayloadInput = {
     signingType: SigningType.MICHELINE,
     payload: payloadBytes,
-    sourceAddress: pkh,
+    sourceAddress: await pkh,
   };
   
   // The signing
-  const signedPayload = await wallet.client.requestSignPayload(payload);
+  const signedPayload = await (await wallet).client.requestSignPayload(payload);
   
   // The signature
   const { signature } = signedPayload;
@@ -87,12 +87,11 @@ const signMessage = async () => {
 const connectWallet = async () => {
 
     console.log('CONNECTING TO BEACON');
-  
-    if (await wallet.client.getActiveAccount()) {
+    if (await (await wallet).client.getActiveAccount()) {
         // Check if we already have an account connected, so we can skip requestPermissions.
         return wallet;
       }
-    await wallet.requestPermissions({
+    await (await wallet).requestPermissions({
       network: {
         type: config.NETWORK,
       },
@@ -101,10 +100,14 @@ const connectWallet = async () => {
 
 };
 
+const wallet_connected = async () => {
+  return await (await wallet).client.getActiveAccount() ; 
+}
+
 
 const disconnectWallet = async () => {
 
-    await wallet.clearActiveAccount();
+    await (await wallet).clearActiveAccount();
 };
 
 
@@ -113,7 +116,7 @@ const disconnectWallet = async () => {
 
 const getTokenid = async () => {
     const contract = await Tezos.contract.at(config.CONTRACT_ADDRESS);
-    const storage = contract.storage;
+    const storage:any = await contract.storage();
     const token_id = storage.all_tokens;
 
     return token_id;
@@ -143,4 +146,4 @@ const mint = async () => {
 
 
 
-export {connectWallet, disconnectWallet, mint, pkh};
+export {connectWallet, disconnectWallet, mint, pkh, getBeaconInstance, wallet_connected};
